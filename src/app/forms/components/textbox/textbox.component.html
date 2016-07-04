@@ -1,0 +1,14 @@
+<span>
+  Textbox component loaded!
+</span>
+<div [formGroup]="form">
+  <label [attr.for]="question.key">
+    {{question.label}}
+  </label>
+  
+  <input [id]="question.key" [type]="question.type" [formControlName]="question.key"/>
+
+  <div class="errorMessage" *ngIf="!isValid">
+    {{question.label}} is required
+  </div>
+</div>

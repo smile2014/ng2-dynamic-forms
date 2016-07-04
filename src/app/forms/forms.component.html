@@ -1,0 +1,32 @@
+<div>
+  <form (ngSumbit)="onSubmit()" [formGroup]="form">
+    <div *ngFor="let question of questions" class="form-row">
+      Question Control Type _: {{question.controlType}} <br />
+      Question Key __________: {{question.key}} <br />
+      Question Label ________: {{question.label}} <br />
+      Question Order ________: {{question.order}} <br />
+      Question Type _________: {{question.type}} <br />
+      <div [ngSwitch]="question.controlType">
+        <app-form-textbox *ngSwitchCase="'textbox'" [question]="question" 
+          [form]="form">Loading textbox...</app-form-textbox>
+        
+      </div>
+      --------------------------------------------------------
+    </div>
+<!--Figure out a way to pass a property that will 
+    allow different text inside save button-->
+    <div class="form-row">
+      <button type="submit" (click)="onSubmit()">Save</button>
+    </div>
+  </form>
+  <!--This has to be passed to the parent component 
+      in order to work properly and dynamically-->
+  <div *ngIf="payLoad">
+    You have added: {{payLoad}}
+  </div>
+  <br/>
+  List of tasks:
+  <div *ngFor="let task of tasks">
+    {{task}}
+  </div>
+</div>
