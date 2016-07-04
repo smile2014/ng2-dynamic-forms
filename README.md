@@ -2,6 +2,34 @@
 
 This project was generated with [angular-cli](https://github.com/angular/angular-cli) version 1.0.0-beta.8.
 
+## If you going to read anything, read this.
+
+The MVP (Minimum Viable Product) for this repository is a simple form builder that will build `textbox` forms and render the data. 
+Will be working on adding more form elements like `textarea, dropdown, checkboxes, etc`. 
+
+### How to add more textbox elements
+
+To add textbox elements you can havigated to `src/app/shared/task.service.ts`, you can copy and paste this code: 
+```javascript
+      new FormTextbox({
+        key: '{{EDIT THIS}}',
+        label: '{{EDIT THIS}}',
+        required: {{EDIT THIS}},
+        type: '{{EDIT THIS}}',
+        order: {{EDIT THIS}}
+      })
+```
+
+To know the expected data types for each entry, navigate to `src/app/forms/form-base.ts`
+
+*NOTE*: This way to add `textbox` elements will be the same to add other elements, what will changed is the declaration
+Example:
+
+```javacript
+  new FormDropbox({...});
+  new FormCheckboxGroup({...});
+```
+
 ## Development server
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
 
