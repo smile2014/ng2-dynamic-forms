@@ -2,9 +2,8 @@ import { Component, Input, OnInit } from '@angular/core';
 import { NgSwitch } from '@angular/common';
 import { FormGroup, REACTIVE_FORM_DIRECTIVES } from '@angular/forms';
 
-import { FormBase } from './form-base';
 import { TextboxComponent, DropdownComponent } from './components/index';
-import { FormControlService } from './shared/index';
+import { FormBase, FormControlService } from './shared/index';
 
 @Component({
   moduleId: module.id,

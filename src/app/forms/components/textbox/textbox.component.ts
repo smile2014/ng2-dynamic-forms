@@ -1,7 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { FormGroup, REACTIVE_FORM_DIRECTIVES } from '@angular/forms';
 
-import { FormBase } from './../../form-base';
+import { FormBase } from './../../shared/index';
 
 @Component({
   moduleId: module.id,
