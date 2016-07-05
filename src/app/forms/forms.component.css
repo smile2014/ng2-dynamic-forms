@@ -1,0 +1,8 @@
+.question_info{
+  font-weight: bold;
+  color: chocolate;
+}
+  .question_info.key{
+    text-transform: uppercase;
+    color: cadetblue;
+  }
