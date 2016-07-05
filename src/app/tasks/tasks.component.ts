@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormsComponent } from './../forms';
-import { TaskFormService } from './shared/index';
+import { TaskFormService } from './forms/index';
 
 @Component({
   moduleId: module.id,
