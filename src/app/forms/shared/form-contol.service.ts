@@ -14,8 +14,7 @@ export class FormControlService {
       group[question.key] = question.required ? 
         new FormControl(question.value || '', Validators.required) : 
         new FormControl(question.value);
-    })
-    console.log('FormGroup >>>>', group);
+    });
     return new FormGroup(group);
   }
 

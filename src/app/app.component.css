@@ -2,3 +2,9 @@
   font-family: 'Mononoki', monospace;
   padding:0; margin:0;
 }
+
+input:focus,
+button:focus {
+  outline: none;
+  border:1px cadetblue solid;
+}

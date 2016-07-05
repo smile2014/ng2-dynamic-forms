@@ -34,7 +34,6 @@ export class FormTextbox extends FormBase<string> {
 
   constructor(options: {} = {}){
     super(options);
-    console.log('Form TextBox options: ', options);
     this.type = options['type'] || '';
   }
 }
