@@ -11,7 +11,8 @@
       <div [ngSwitch]="question.controlType">
         <app-form-textbox *ngSwitchCase="'textbox'" [question]="question" 
           [form]="form">Loading textbox...</app-form-textbox>
-        
+        <app-form-dropdown *ngSwitchCase="'dropdown'" [question]="question"
+          [form]="form">Loading dropdown...</app-form-dropdown>
       </div>
       -----------------------END QUESTION-----------------------
       <br />

@@ -24,13 +24,14 @@ export class TaskFormService {
       }),
 
       new FormDropdown({
-        key: 'options',
-        label: 'select',
-        required: false,
-        order: 3,
-        opts: [
-          'foo',
-          'bar'
+        key: 'priority',
+        label: 'Priority',
+        required: true,
+        order: 0,
+        options: [
+          {key: 'high', value: 'High'},
+          {key: 'medium', value: 'Medium'},
+          {key: 'low', value: 'Low'}
         ]
       })
 

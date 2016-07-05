@@ -1,15 +1,15 @@
-<div [formGroup="form"]>
-  <label [attr.for]="base.key">
-    {{base.label}}
+<div [formGroup]="form">
+  <label [attr.for]="question.key">
+    {{question.label}}
   </label>
-  
-  <select [id]="base.key" *ngSwitchCase="'dropdown'" 
-          [formControlName]="base.key">
-    <option *ngFor="let opt of base.options" 
+ 
+  <select [id]="question.key" 
+          [formControlName]="question.key">
+    <option *ngFor="let opt of question.options" 
             [value]="opt.key">{{opt.value}}</option>
-  </select>>
+  </select>
 
   <div class="errorMessage" *ngIf="!isValid">
-    {{base.label}} is required
+    {{question.label}} is required
   </div>
 </div>
