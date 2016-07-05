@@ -22,7 +22,7 @@ import { FormBase, FormControlService } from './shared/index';
 })
 export class FormsComponent implements OnInit {
   @Input() questions: FormBase<any>[] = [];
-  @Output() onTaskSubmit = new EventEmitter<string>();
+  @Output() onFormSubmit = new EventEmitter<string>();
   payLoad: string;
   form: FormGroup;
   tasks: any[] = [];
@@ -36,11 +36,7 @@ export class FormsComponent implements OnInit {
   onSubmit() {
     this.payLoad = JSON.stringify(this.form.value);
     this.tasks.push(this.payLoad);
-    this.onTaskSubmit.emit(this.payLoad)
-    /**
-     * NOTE: 
-     * How to pass `this.tasks` to the parent component calling the helper
-     */
+    this.onFormSubmit.emit(this.payLoad);
     console.log('Tasks: ', this.tasks.map(x => JSON.parse(x)));
   }
 }

@@ -23,14 +23,7 @@
       <button type="submit" (click)="onSubmit()">Save</button>
     </div>
   </form>
-  <!--This has to be passed to the parent component 
-      in order to work properly and dynamically-->
   <div *ngIf="payLoad">
     You have added: {{payLoad}}
-  </div>
-  <br/>
-  List of tasks:
-  <div *ngFor="let task of tasks">
-    {{task}}
   </div>
 </div>

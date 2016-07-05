@@ -1,5 +1,10 @@
-<app-forms id="taskForm" [questions]="questions">
+<app-forms id="taskForm" [questions]="questions" 
+  (onFormSubmit)="onFormSubmit($event)">
 </app-forms>
+  <br/>
+  <div *ngFor="let task of tasks">
+    {{task.name}} > {{task.info}}
+  </div>
 
 
 <!--TODOS:
