@@ -2,8 +2,13 @@
   (onFormSubmit)="onFormSubmit($event)">
 </app-forms>
   <br/>
-  <div *ngFor="let task of tasks">
-    {{task.name}} > {{task.info}}
+  <div class="tasklist" *ngFor="let task of tasks">
+    <div>
+      {{task.name}}
+    </div>
+    <div>
+      {{task.info}}
+    </div>
   </div>
 
 
