@@ -6,13 +6,13 @@ import {
   expect, it, xit,
   async, inject
 } from '@angular/core/testing';
-import { TaskService } from './task.service';
+import { TaskFormService } from './task-form.service';
 
-describe('Task Service', () => {
-  beforeEachProviders(() => [TaskService]);
+describe('TaskForm Service', () => {
+  beforeEachProviders(() => [TaskFormService]);
 
   it('should ...',
-      inject([TaskService], (service: TaskService) => {
+      inject([TaskFormService], (service: TaskFormService) => {
     expect(service).toBeTruthy();
   }));
 });

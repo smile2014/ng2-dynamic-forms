@@ -1,10 +1,10 @@
 import { Injectable } from '@angular/core';
 
-import { FormBase, FormTextbox, FormDropdown } from './../forms/shared/index';
+import { FormBase, FormTextbox, FormDropdown } from './../../forms/shared/index';
 
 @Injectable()
-export class TaskService { 
-  createForm() {
+export class TaskFormService {
+  addTaskForm() {
     let questions: FormBase<any>[] = [
       
       new FormTextbox({
@@ -21,20 +21,21 @@ export class TaskService {
         required: true,
         type: 'text',
         order: 1
+      }),
+
+      new FormDropdown({
+        key: 'options',
+        label: 'select',
+        required: false,
+        order: 3,
+        opts: [
+          'foo',
+          'bar'
+        ]
       })
 
     ];
 
     return questions.sort((a, b) => a.order - b.order);
   }
-  
-  getTasks() {
-    let tasks: any = {};
-    return tasks;
-  }
-
-  addTask(payLoad: string) {
-    // this method sends the payload to the server7
-  }
-  
 }

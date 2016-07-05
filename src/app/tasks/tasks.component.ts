@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormsComponent } from './../forms';
-import { TaskService } from './../shared/index'
+import { TaskFormService } from './shared/index';
 
 @Component({
   moduleId: module.id,
@@ -11,14 +11,14 @@ import { TaskService } from './../shared/index'
     FormsComponent
   ],
   providers: [
-    TaskService
+    TaskFormService
   ]
 })
 export class TasksComponent implements OnInit {
   questions: any[];
   tasks: any[] = [];
-  constructor(taskSvc: TaskService) {
-    this.questions = taskSvc.createForm();
+  constructor(taskSvc: TaskFormService) {
+    this.questions = taskSvc.addTaskForm();
   }
 
   ngOnInit() {
