@@ -6,7 +6,8 @@
     {{question.label}}
   </label>
   
-  <input [id]="question.key" [type]="question.type" [formControlName]="question.key"/>
+  <input [id]="question.key" [type]="question.type" 
+          [formControlName]="question.key"/>
 
   <div class="errorMessage" *ngIf="!isValid">
     {{question.label}} is required
