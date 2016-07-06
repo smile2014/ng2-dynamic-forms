@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { FormGroup, REACTIVE_FORM_DIRECTIVES } from '@angular/forms';
 
 import { FormBase } from './../../shared/index';
@@ -14,10 +14,6 @@ export class TextboxComponent{
   @Input() question: FormBase<any>;
   @Input() form: FormGroup;
   constructor() {}
-
-  ngOnInit() {
-    console.log(`Init Textbox Key: '${this.question.key.toUpperCase()}'`);
-  }
   
   get isValid() {
     return this.form.controls[this.question.key].valid;
