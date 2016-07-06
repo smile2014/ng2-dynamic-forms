@@ -1,4 +1,5 @@
-<div [formGroup]="form" class="app-form-dropdown app-form-group">
+<div [formGroup]="form" 
+     class="app-form-dropdown app-form-group">
   <label [attr.for]="question.key">
     {{question.label}} :
   </label>
@@ -10,7 +11,8 @@
             [value]="opt.key">{{opt.value}}</option>
   </select>
 
-  <div class="app-form-error-message" *ngIf="!isValid">
+  <div class="app-form-error-message" 
+       *ngIf="!isValid">
     {{question.label}} is required
   </div>
 </div>
