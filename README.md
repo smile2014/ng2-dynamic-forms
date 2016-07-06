@@ -9,7 +9,7 @@ The purpose of this repository is to learn how to create dynamic, reusable compo
 Example of how to use the `forms` components can be found in [src/app/tasks](https://github.com/baruchvlz/ng2-dynamic-forms/tree/master/src/app/tasks).
 
 ### Todo List:
-- Form Elements:
+- Form Components:
   - [x] Textbox 
   - [x] Dropdown
   - [x] Textarea
@@ -19,6 +19,7 @@ Example of how to use the `forms` components can be found in [src/app/tasks](htt
   - [ ] List
   - [ ] File ( Upload functionality, maybe? )
   - [ ] Buttons
+  - [ ] Error Messages
 
 ( If missing any please let me know )
 
