@@ -20,23 +20,38 @@ import { FormBase, FormControlService } from './shared/index';
     FormControlService
   ]
 })
+/**
+ * Inputs a list of questions
+ * Outputs payLoad string
+ */
 export class FormsComponent implements OnInit {
   @Input() questions: FormBase<any>[] = [];
-  @Output() onFormSubmit = new EventEmitter<string>();
+  @Output() formButtonEvent = new EventEmitter<string>();
   payLoad: string;
   form: FormGroup;
   tasks: any[] = [];
   
   constructor(private fcs: FormControlService) {}
 
-  ngOnInit() {
+  public ngOnInit() {
     this.form = this.fcs.toFormGroup(this.questions);
   }
 
-  onSubmit() {
+  public resetPayload() {
+    this.payLoad = '';
+    this.sendPayload(this.payLoad);
+  }
+
+  public onSubmit() {
     this.payLoad = JSON.stringify(this.form.value);
-    this.tasks.push(this.payLoad);
-    this.onFormSubmit.emit(this.payLoad);
-    console.log('Tasks: ', this.tasks.map(x => JSON.parse(x)));
+    this.sendPayload(this.payLoad);
+  }
+
+/**
+ * Private Functions
+ */
+
+  private sendPayload(payload: string){
+   this.formButtonEvent.emit(payload); 
   }
 }
