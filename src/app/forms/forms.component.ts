@@ -35,10 +35,9 @@ import { FormBase, FormControlService } from './shared/index';
  */
 export class FormsComponent implements OnInit {
   @Input() questions: FormBase<any>[] = [];
-  @Output() formButtonEvent = new EventEmitter<string>();
+  @Output() formAction = new EventEmitter<string>();
   payLoad: string;
   form: FormGroup;
-  tasks: any[] = [];
 
   constructor(private fcs: FormControlService) {}
 
@@ -75,14 +74,14 @@ export class FormsComponent implements OnInit {
 
   private sendPayload(payload: string){
     // trigger even listener function
-    this.formButtonEvent.emit(payload); 
+    this.formAction.emit(payload); 
   }
 
   private removeUndefined (object: any = {}) {
     let returnObj: any = {};
     // Pft, who needs underscore?
     Object.keys(object).map(key => {
-      if(object[key] !== null && object[key] !== '') returnObj[key] = object[key]
+      if(object[key] !== null && object[key] !== '') returnObj[key] = object[key];
     });
     return returnObj;
   }
