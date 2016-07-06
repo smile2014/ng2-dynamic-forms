@@ -1,34 +1,30 @@
 # Dynamicforms
-
-This project was generated with [angular-cli](https://github.com/angular/angular-cli) version 1.0.0-beta.8.
-
 ## If you going to read anything, read this.
 
-The MVP (Minimum Viable Product) for this repository is a simple form builder that will build `textbox` forms and render the data. 
-Will be working on adding more form elements like `textarea, dropdown, checkboxes, etc`. 
+This is a study-case repository that will be updated as new things emerge. 
+The purpose of this repository is to learn how to create dynamic, reusable components such as `forms`, `tables`, `lists`.
 
-### How to add more textbox elements
+### Usage:
 
-To add textbox elements you can havigated to `src/app/shared/task.service.ts`, you can copy and paste this code: 
-```javascript
-      new FormTextbox({
-        key: '{{EDIT THIS}}',
-        label: '{{EDIT THIS}}',
-        required: {{EDIT THIS}},
-        type: '{{EDIT THIS}}',
-        order: {{EDIT THIS}}
-      })
-```
+Example of how to use the `forms` components can be found in [src/app/tasks](https://github.com/baruchvlz/ng2-dynamic-forms/tree/master/src/app/tasks).
 
-To know the expected data types for each entry, navigate to `src/app/forms/form-base.ts`
+### Todo List:
+- Form Elements:
+  - [x] Textbox 
+  - [x] Dropdown
+  - [x] Textarea
+  - [ ] Checkboxes / Checkbox Group
+  - [ ] Radio / Radio Group
+  - [ ] Labels ( To be called within each components )
+  - [ ] List
+  - [ ] File ( Upload functionality, maybe? )
+  - [ ] Buttons
 
-*NOTE*: This way to add `textbox` elements will be the same to add other elements, what will changed is the declaration
-Example:
+( If missing any please let me know )
 
-```javacript
-  new FormDropbox({...});
-  new FormCheckboxGroup({...});
-```
+
+# Angular CLI README:
+This project was generated with [angular-cli](https://github.com/angular/angular-cli) version 1.0.0-beta.8.
 
 ## Development server
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
