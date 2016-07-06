@@ -39,3 +39,27 @@
     background: white;
     cursor: pointer;
   }
+
+:host >>> select,
+:host >>> button,
+:host >>> textarea,
+:host >>> input
+:host >>> .no-focus {
+  border: 2px #b2b2b2 solid;
+} 
+  :host >>> select:hover,
+  :host >>> button:hover,
+  :host >>> textarea:hover,
+  :host >>> input:hover,
+  :host >>> .no-focus:hover {
+    border: 2px chocolate solid;
+  }
+  :host >>> button:focus,
+  :host >>> input:focus,
+  :host >>> textarea:focus,
+  :host >>> select:focus,
+  :host >>> .no-focus:focus {
+    box-shadow: 0;
+    outline: none;
+    border: 2px cadetblue solid;
+  }
