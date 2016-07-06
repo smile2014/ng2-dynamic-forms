@@ -15,19 +15,26 @@ import { TaskFormService } from './forms/index';
   ]
 })
 export class TasksComponent implements OnInit {
+  title = 'Ominto Bug Report';
   questions: any[];
   tasks: any[] = [];
   constructor(taskSvc: TaskFormService) {
     this.questions = taskSvc.addTaskForm();
   }
 
-  ngOnInit() {
-    console.log('Task Form Init')
+  public ngOnInit() {
+    console.log('Tasks Component Init');
   }
 
-  onFormSubmit(data: string) {
-    this.tasks.push(JSON.parse(data));
-    console.log('Data', JSON.parse(data));
+  public formButtonEvent(data: string) {
+    let dataJSON = JSON.parse(data);
+    this.addData(dataJSON);
   }
 
+  private addData(data: any = {}){
+    console.log('Data: ', data);
+    console.log('Current Tasks: ', this.tasks);
+    this.tasks.push(data);
+    console.log('Updated Tasks: ', this.tasks);
+  }
 }
