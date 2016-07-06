@@ -9,6 +9,17 @@ import {
 } from './components/index';
 import { FormBase, FormControlService } from './shared/index';
 
+function removeUndefined (object: any = {}){
+  let returnObj: any = {};
+  console.log('Removing Undefined', object);
+  for(let key in object){
+    if(object[key] !== null) {
+      returnObj[key] = object[key];  
+    }
+  }
+  return returnObj;
+}
+
 @Component({
   moduleId: module.id,
   selector: 'app-forms',
@@ -49,8 +60,11 @@ export class FormsComponent implements OnInit {
   }
 
   public onSubmit() {
-    this.payLoad = JSON.stringify(this.form.value);
-    this.sendPayload(this.payLoad);
+    let value: any = {};    
+    value = removeUndefined(this.form.value);
+    console.log('Removed undefined?', value);
+    this.payLoad = JSON.stringify(value);
+    this.sendPayload(JSON.stringify(value));
   }
 
 /**
