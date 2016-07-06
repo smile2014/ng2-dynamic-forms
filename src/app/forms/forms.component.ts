@@ -36,8 +36,6 @@ import { FormBase, FormControlService } from './shared/index';
 export class FormsComponent implements OnInit {
   // Accept an array of questions validated through FormBase
   @Input() questions: FormBase<any>[] = [];
-  // Error message to be sent down stream
-  @Input() error_message: string;
   // Sets EventEmitter to output payLoad
   @Output() formAction = new EventEmitter<string>();
   // Set payLoad string
