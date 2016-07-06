@@ -15,7 +15,7 @@ import { TaskFormService } from './forms/index';
   ]
 })
 export class TasksComponent implements OnInit {
-  title = 'Ominto Bug Report';
+  title = 'Form Component Display';
   questions: any[];
   tasks: any[] = [];
   constructor(taskSvc: TaskFormService) {

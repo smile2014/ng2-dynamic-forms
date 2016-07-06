@@ -2,7 +2,7 @@
 
 import { By }           from '@angular/platform-browser';
 import { DebugElement } from '@angular/core';
-import { TaskService } from './../shared/index';
+import { TaskFormService } from './forms/index';
 import {
   beforeEach, beforeEachProviders,
   describe, xdescribe,
