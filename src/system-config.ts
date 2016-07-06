@@ -38,6 +38,7 @@ const barrels: string[] = [
   'app/forms/components/dropdown',
   'app/tasks',
   'app/forms',
+  'app/list',
   /** @cli-barrel */
 ];
 
