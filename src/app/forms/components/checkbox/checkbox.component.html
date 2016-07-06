@@ -1,0 +1,17 @@
+<div 
+  class="app-form-dropdown app-form-group"
+  [formGroup]="form" 
+>
+  <input 
+    class="app-form-control"
+    type="checkbox"
+    [id]="question.key"
+    [formControlName]="question.key"
+    [value]="question.label"
+  />
+  <label 
+    [attr.for]="question.key"
+  >
+    {{question.label}}
+  </label>
+</div>
