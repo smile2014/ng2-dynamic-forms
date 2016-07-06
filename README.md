@@ -6,7 +6,7 @@ The purpose of this repository is to learn how to create dynamic, reusable compo
 
 ### Usage:
 
-Example of how to use the `forms` components can be found in `[src/app/tasks](https://github.com/baruchvlz/ng2-dynamic-forms/tree/master/src/app/tasks)`.
+Example of how to use the `forms` components can be found in [src/app/tasks](https://github.com/baruchvlz/ng2-dynamic-forms/tree/master/src/app/tasks).
 
 ### Todo List:
 - Form Elements:
@@ -19,6 +19,7 @@ Example of how to use the `forms` components can be found in `[src/app/tasks](ht
   - [ ] List
   - [ ] File ( Upload functionality, maybe? )
   - [ ] Buttons
+
 ( If missing any please let me know )
 
 
