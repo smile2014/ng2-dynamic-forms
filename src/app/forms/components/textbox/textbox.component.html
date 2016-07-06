@@ -1,13 +1,24 @@
-<div class="app-form-textbox app-form-group" [formGroup]="form">
-  <label [attr.for]="question.key">
+<div 
+  [id]="question.key" 
+  class="app-form-textbox app-form-group" 
+  [formGroup]="form"
+>
+  <label 
+    [attr.for]="question.key"
+  >
     {{question.label}}:
   </label>
   <br />
-  <input [id]="question.key" [type]="question.type" 
-          class="app-form-control"
-          [formControlName]="question.key"/>
-
-  <div class="app-form-error-message" *ngIf="!isValid">
-    {{question.label}} is required
-  </div>
+  <input 
+    class="app-form-control"
+    [type]="question.type" 
+    [formControlName]="question.key"
+    (change)="validateInputs()"
+  />
+  <app-form-error-message
+    *ngIf="error_message"
+    [message]="error_message"
+  >
+    Loading error message . . .
+  </app-form-error-message>
 </div>

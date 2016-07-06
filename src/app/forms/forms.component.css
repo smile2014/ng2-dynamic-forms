@@ -6,6 +6,9 @@
     text-transform: uppercase;
     color: cadetblue;
   }
+:host >>> .errorMessage {
+  color: red;
+}
 :host >>> .app-form-group {
   margin-bottom: 10px;
   padding-bottom: 10px;

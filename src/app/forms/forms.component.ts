@@ -34,12 +34,24 @@ import { FormBase, FormControlService } from './shared/index';
  * Outputs payLoad string
  */
 export class FormsComponent implements OnInit {
+  // Accept an array of questions validated through FormBase
   @Input() questions: FormBase<any>[] = [];
+  // Error message to be sent down stream
+  @Input() error_message: string;
+  // Sets EventEmitter to output payLoad
   @Output() formAction = new EventEmitter<string>();
+  // Set payLoad string
   payLoad: string;
+  // Link form to current FormGroup
   form: FormGroup;
+  // Disable Submit
+  submit_disabled: boolean;
+  // Set private service variable
+  constructor(
+    private fcs: FormControlService
+  ) {
 
-  constructor(private fcs: FormControlService) {}
+  }
 
   public ngOnInit() {
     // load questions into form
@@ -60,6 +72,15 @@ export class FormsComponent implements OnInit {
     this.sendPayload(this.payLoad);
   }
 
+  public validateForm(controls: any = {}) {
+    let requisites: any[] = [];
+    Object.keys(controls).forEach((value, index, array) => {
+      requisites.push(controls[value].valid);
+    })
+    // Disable Submit if required fields are not added
+    this.submit_disabled = requisites.indexOf(false) > -1 ? true : false;    
+  }
+
   public submitPayload() {
     console.log('Form Values (submit) : ', this.form.value);
     // Removes undefined from form values and stringifies the JSON object
@@ -72,9 +93,9 @@ export class FormsComponent implements OnInit {
  * Private Functions
  */
 
-  private sendPayload(payload: string){
+  private sendPayload(payLoad: string){
     // trigger even listener function
-    this.formAction.emit(payload); 
+    this.formAction.emit(payLoad); 
   }
 
   private removeUndefined (object: any = {}) {

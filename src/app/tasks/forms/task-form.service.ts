@@ -15,41 +15,27 @@ export class TaskFormService {
     let questions: FormBase<any>[] = [
 
       new FormTextbox({
-        key: 'textbox',
-        label: 'Text Box',
-        required: false,
+        key: 'task',
+        label: 'Enter Task',
+        required: true,
         type: 'text',
         order: 1
       }),
       new FormDropdown({
-        key: 'dropdown',
-        label: 'Drop Down',
+        key: 'priority',
+        label: 'Priority',
         required: false,
         order: 2,
-        options: [ {
-          key: 'foo',
-          value: 'Foo'
+        options: [{
+          key: 'high',
+          value: 'High'
         },{
-          key: 'bar',
-          value: 'Bar'
+          key: 'medium',
+          value: 'Medium'
+        },{
+          key: 'low',
+          value: 'Low'
         }]
-      }),
-      new FormTextarea({
-        key: 'textarea',
-        label: 'Text Area',
-        required: false,
-        order:3,
-        type: 'comment'
-      }),
-      new FormCheckbox({
-        key: 'checkbox',
-        label: 'Check Box',
-        order: 4
-      }),
-      new FormRadioButton({
-        key: 'radio-button',
-        label: 'Radio Button',
-        order: 5
       })
     ];
 

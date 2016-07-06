@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 @Component({
   moduleId: module.id,
@@ -6,11 +6,6 @@ import { Component, OnInit } from '@angular/core';
   templateUrl: 'error-message.component.html',
   styleUrls: ['error-message.component.css']
 })
-export class ErrorMessageComponent implements OnInit {
-
-  constructor() {}
-
-  ngOnInit() {
-  }
-
+export class ErrorMessageComponent {
+  @Input() message: string;
 }

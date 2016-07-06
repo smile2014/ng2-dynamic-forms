@@ -15,8 +15,9 @@ import { TaskFormService } from './forms/index';
   ]
 })
 export class TasksComponent implements OnInit {
-  title = 'Form Component Display';
+  title = 'Task Form';
   questions: any[];
+  error_message: string;
   tasks: any[] = [];
   constructor(taskSvc: TaskFormService) {
     this.questions = taskSvc.addTaskForm();
@@ -26,17 +27,28 @@ export class TasksComponent implements OnInit {
     console.log('Tasks Component Init');
   }
 
-  public formAction(data: string) {
-    if(data === '') return this.resetData();
-    this.updateData(data);
+  public formAction(payLoad: string) {
+    let payLoadParsed: any = JSON.parse(payLoad);
+    this.validatePayLoad(payLoadParsed);
   }
 
-  private updateData(data: any = {}){
-    this.tasks.push(data);
+  private updatePayload(payLoad: any = {}){
+    this.tasks.push(payLoad);
   }
 
-  private resetData() {
+  private validatePayLoad(payLoad: any = {}) {
+    switch(payLoad){
+      // Create logic to either Update or Reset payload
+    }
+  }
+  
+  private handleError (message: string){
+    this.error_message = message;
+  }
+
+  private resetPayload() {
     console.log('reset data');
+    if(this.error_message.length > 0 ) this.error_message = '';
     return this.tasks = [];
   }
 }

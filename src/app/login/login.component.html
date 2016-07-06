@@ -1,0 +1,12 @@
+<h4 *ngIf="title">
+  {{title}}
+</h4>
+<hr/>
+<br/>
+<app-forms 
+  id="appForm" 
+  [questions]="questions" 
+  (formAction)="formAction($event)"
+>
+  Loading form . . .
+</app-forms>

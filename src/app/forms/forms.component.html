@@ -6,6 +6,7 @@
           *ngSwitchCase="'textbox'" 
           [question]="question" 
           [form]="form"
+          (validateForm)="validateForm($event)"
         >
           Loading textbox...
         </app-form-textbox>
@@ -45,12 +46,22 @@
     </div>
 <!--Figure out a way to pass a property that will 
     allow different text inside save button-->
-    <div class="form-row app-form-group">
-      <button type="reset" (click)="resetPayload()">Reset</button>
-      <button type="submit" (click)="submitPayload()">Save</button>
+    <div 
+      class="form-row app-form-group"
+    >
+      <button
+        type="reset" 
+        (click)="resetPayload()"
+      >
+        Reset
+      </button>
+      <button 
+        type="submit" 
+        [disabled]="submit_disabled" 
+        (click)="submitPayload()"
+      >
+        Save
+      </button>
     </div>
   </form>
-  <div *ngIf="payLoad">
-    You have added: {{payLoad}}
-  </div>
 </div>

@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { TasksComponent } from './tasks';
+import { LoginComponent } from './login';
 
 @Component({
   moduleId: module.id,
@@ -7,7 +8,8 @@ import { TasksComponent } from './tasks';
   templateUrl: 'app.component.html',
   styleUrls: ['app.component.css'],
   directives: [
-    TasksComponent
+    TasksComponent,
+    LoginComponent
   ]
 })
 export class AppComponent {
