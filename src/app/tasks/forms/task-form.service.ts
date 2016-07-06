@@ -5,7 +5,8 @@ import {
   FormTextbox, 
   FormDropdown,
   FormTextarea,
-  FormCheckbox
+  FormCheckbox,
+  FormRadioButton
 } from './../../forms/shared/index';
 
 @Injectable()
@@ -44,6 +45,11 @@ export class TaskFormService {
         key: 'checkbox',
         label: 'Check Box',
         order: 4
+      }),
+      new FormRadioButton({
+        key: 'radio-button',
+        label: 'Radio Button',
+        order: 5
       })
     ];
 

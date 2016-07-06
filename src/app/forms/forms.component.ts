@@ -6,7 +6,8 @@ import {
   TextboxComponent, 
   DropdownComponent,
   TextareaComponent,
-  CheckboxComponent 
+  CheckboxComponent,
+  RadioComponent
 } from './components/index';
 import { FormBase, FormControlService } from './shared/index';
 
@@ -21,6 +22,7 @@ import { FormBase, FormControlService } from './shared/index';
     DropdownComponent,
     TextareaComponent,
     CheckboxComponent,
+    RadioComponent,
     REACTIVE_FORM_DIRECTIVES
   ],
   providers: [
@@ -59,7 +61,7 @@ export class FormsComponent implements OnInit {
     this.sendPayload(this.payLoad);
   }
 
-  public onSubmit() {
+  public submitPayload() {
     console.log('Form Values (submit) : ', this.form.value);
     // Removes undefined from form values and stringifies the JSON object
     this.payLoad = JSON.stringify(this.removeUndefined(this.form.value));

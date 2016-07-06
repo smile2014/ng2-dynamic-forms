@@ -1,5 +1,5 @@
 <div>
-  <form (ngSumbit)="onSubmit()" [formGroup]="form">
+  <form (ngSumbit)="submitPayload()" [formGroup]="form">
     <div *ngFor="let question of questions" class="form-row">
       <div [ngSwitch]="question.controlType">
         <app-form-textbox 
@@ -30,17 +30,24 @@
           *ngSwitchCase="'checkbox'" 
           [question]="question"
           [form]="form"
-          (checkedValue)="checkedValue($event)"
         >
           Loading checkbox...
         </app-form-checkbox>
+
+        <app-form-radio
+          *ngSwitchCase="'radio'" 
+          [question]="question"
+          [form]="form"
+        >
+          Loading radio...
+        </app-form-radio>
       </div>
     </div>
 <!--Figure out a way to pass a property that will 
     allow different text inside save button-->
     <div class="form-row app-form-group">
       <button type="reset" (click)="resetPayload()">Reset</button>
-      <button type="submit" (click)="onSubmit()">Save</button>
+      <button type="submit" (click)="submitPayload()">Save</button>
     </div>
   </form>
   <div *ngIf="payLoad">
