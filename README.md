@@ -18,7 +18,7 @@ Example of how to use the `forms` components can be found in [src/app/tasks](htt
     - [ ] Allow for not resize
   - [x] Checkbox
   - [ ] Checkbox Group ( multiple checkbox components )
-  - [ ] Radio
+  - [x] Radio
   - [ ] Radio Group ( multiple radio components )
   - [ ] Labels ( To be called within each components )
   - [ ] File ( Upload functionality, maybe? )
