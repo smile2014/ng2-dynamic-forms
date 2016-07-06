@@ -13,11 +13,11 @@ Example of how to use the `forms` components can be found in [src/app/tasks](htt
   - [x] Textbox 
   - [x] Dropdown
   - [x] Textarea
+    - [ ] Allow max characters
   - [x] Checkbox
   - [ ] Checkbox Group
   - [ ] Radio / Radio Group
   - [ ] Labels ( To be called within each components )
-  - [ ] List
   - [ ] File ( Upload functionality, maybe? )
   - [ ] Buttons
   - [ ] Error Messages
