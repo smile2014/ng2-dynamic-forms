@@ -1,26 +1,17 @@
 <div>
   <form (ngSumbit)="onSubmit()" [formGroup]="form">
     <div *ngFor="let question of questions" class="form-row">
-      -----------------------NEW QUESTION----------------------- <br/>
-      Question Control Type _: <span class="question_info">{{question.controlType}} </span><br />
-      Question Key __________: <span class="question_info key">{{question.key}} </span><br />
-      Question Label ________: <span class="question_info">{{question.label}} </span><br />
-      Question Order ________: <span class="question_info">{{question.order}} </span><br />
-      Question Type _________: <span class="question_info">{{question.type}} </span><br />
-      <br />
       <div [ngSwitch]="question.controlType">
         <app-form-textbox *ngSwitchCase="'textbox'" [question]="question" 
           [form]="form">Loading textbox...</app-form-textbox>
         <app-form-dropdown *ngSwitchCase="'dropdown'" [question]="question"
           [form]="form">Loading dropdown...</app-form-dropdown>
       </div>
-      -----------------------END QUESTION-----------------------
-      <br />
-      <br />
     </div>
 <!--Figure out a way to pass a property that will 
     allow different text inside save button-->
     <div class="form-row">
+      <button type="reset" (click)="resetPayload()">Reset</button>
       <button type="submit" (click)="onSubmit()">Save</button>
     </div>
   </form>

@@ -11,5 +11,5 @@ import { TasksComponent } from './tasks';
   ]
 })
 export class AppComponent {
-  title = 'angular2 task list';
+  title = 'angular2 form creator';
 }

@@ -1,16 +1,11 @@
+<h4 *ngIf="title">
+  {{title}}
+</h4>
+<hr/>
+<br/>
 <app-forms id="taskForm" [questions]="questions" 
-  (onFormSubmit)="onFormSubmit($event)">
+  (formButtonEvent)="formButtonEvent($event)">
 </app-forms>
-  <br/>
-  <div class="tasklist" *ngFor="let task of tasks">
-    <div>
-      {{task.name}}
-    </div>
-    <div>
-      {{task.info}}
-    </div>
-  </div>
-
 
 <!--TODO:
   - CREATE LIST COMPONENT:
@@ -22,7 +17,7 @@
     </li>
   </ul>
 
-<app-list id="taskList" [tasks]="tasks">
+<app-list id="taskList" [items]="tasks">
 </app-list>
 
 
@@ -36,6 +31,6 @@
     </tr>
   </table>
 
-<app-table id="taskTable" [tasks]="tasks">
+<app-table id="taskTable" [rows]="tasks">
 </app-table>
 -->

@@ -1,11 +1,8 @@
-<span>
-  Textbox component loaded!
-</span>
-<div [formGroup]="form">
+<div class="form-textbox" [formGroup]="form">
   <label [attr.for]="question.key">
-    {{question.label}}
+    {{question.label}}:
   </label>
-  
+  <br />
   <input [id]="question.key" [type]="question.type" 
           [formControlName]="question.key"/>
 
