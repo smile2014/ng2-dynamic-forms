@@ -21,7 +21,7 @@ export class TextboxComponent implements OnInit{
         this.error('For checkboxes use FormCheckbox component');
         break;
       case 'radio':
-        this.error('For radio buttons use FormRadio component')
+        this.error('For radio buttons use FormRadio component');
         break;
     }
   } 
