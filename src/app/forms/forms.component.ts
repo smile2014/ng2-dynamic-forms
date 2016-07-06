@@ -11,12 +11,10 @@ import { FormBase, FormControlService } from './shared/index';
 
 function removeUndefined (object: any = {}){
   let returnObj: any = {};
-  console.log('Removing Undefined', object);
-  for(let key in object){
-    if(object[key] !== null) {
-      returnObj[key] = object[key];  
-    }
-  }
+  // why can't underscore just work ;(
+  Object.keys(object).map(key => {
+    if(object[key] !== null) returnObj[key] = object[key]
+  })
   return returnObj;
 }
 
