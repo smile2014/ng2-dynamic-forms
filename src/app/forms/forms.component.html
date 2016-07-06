@@ -2,12 +2,38 @@
   <form (ngSumbit)="onSubmit()" [formGroup]="form">
     <div *ngFor="let question of questions" class="form-row">
       <div [ngSwitch]="question.controlType">
-        <app-form-textbox *ngSwitchCase="'textbox'" [question]="question" 
-          [form]="form">Loading textbox...</app-form-textbox>
-        <app-form-dropdown *ngSwitchCase="'dropdown'" [question]="question"
-          [form]="form">Loading dropdown...</app-form-dropdown>
-        <app-form-textarea *ngSwitchCase="'textarea'" [question]="question"
-          [form]="form">Loading textarea...</app-form-textarea>
+        <app-form-textbox 
+          *ngSwitchCase="'textbox'" 
+          [question]="question" 
+          [form]="form"
+        >
+          Loading textbox...
+        </app-form-textbox>
+
+        <app-form-dropdown 
+          *ngSwitchCase="'dropdown'" 
+          [question]="question"                  
+          [form]="form"
+        >
+          Loading dropdown...
+        </app-form-dropdown>
+
+        <app-form-textarea 
+          *ngSwitchCase="'textarea'"
+          [question]="question"
+          [form]="form"
+        >
+          Loading textarea...
+        </app-form-textarea>
+
+        <app-form-checkbox
+          *ngSwitchCase="'checkbox'" 
+          [question]="question"
+          [form]="form"
+          (checkedValue)="checkedValue($event)"
+        >
+          Loading checkbox...
+        </app-form-checkbox>
       </div>
     </div>
 <!--Figure out a way to pass a property that will 

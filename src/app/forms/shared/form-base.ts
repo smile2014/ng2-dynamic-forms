@@ -57,3 +57,13 @@ export class FormTextarea extends FormBase<string> {
     this.type = options['type'] || '';
   }
 }
+
+export class FormCheckbox extends FormBase<string> {
+  controlType = 'checkbox';
+  key: string;
+  
+  constructor(options: {} = {}) {
+    super(options);
+    this.key = options['key'] || 'checkbox';
+  }
+}

@@ -5,7 +5,8 @@ import { FormGroup, REACTIVE_FORM_DIRECTIVES } from '@angular/forms';
 import { 
   TextboxComponent, 
   DropdownComponent,
-  TextareaComponent 
+  TextareaComponent,
+  CheckboxComponent 
 } from './components/index';
 import { FormBase, FormControlService } from './shared/index';
 
@@ -19,6 +20,7 @@ import { FormBase, FormControlService } from './shared/index';
     TextboxComponent,
     DropdownComponent,
     TextareaComponent,
+    CheckboxComponent,
     REACTIVE_FORM_DIRECTIVES
   ],
   providers: [
@@ -44,15 +46,21 @@ export class FormsComponent implements OnInit {
   }
 
   public resetPayload() {
+    /**
+     * NOTE: 
+     *  Inputs are caching the previously added value
+     */
     // reset payload
     this.payLoad = '';
     // reset form values
-    Object.keys(this.form.value).map(value =>  this.form.value[value] = null );
+    console.log('Form Values (reset) : ', this.form.value);
+    Object.keys(this.form.value).map(value =>  delete this.form.value[value] );
     // send payload to parent
     this.sendPayload(this.payLoad);
   }
 
   public onSubmit() {
+    console.log('Form Values (submit) : ', this.form.value);
     // Removes undefined from form values and stringifies the JSON object
     this.payLoad = JSON.stringify(this.removeUndefined(this.form.value));
     // send payload to parent
@@ -62,6 +70,7 @@ export class FormsComponent implements OnInit {
 /**
  * Private Functions
  */
+
   private sendPayload(payload: string){
     // trigger even listener function
     this.formButtonEvent.emit(payload); 

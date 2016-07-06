@@ -9,19 +9,24 @@ The purpose of this repository is to learn how to create dynamic, reusable compo
 Example of how to use the `forms` components can be found in [src/app/tasks](https://github.com/baruchvlz/ng2-dynamic-forms/tree/master/src/app/tasks).
 
 ### Todo List:
-- Form Elements:
+- Form Components:
   - [x] Textbox 
   - [x] Dropdown
   - [x] Textarea
-  - [ ] Checkboxes / Checkbox Group
+  - [x] Checkbox
+  - [ ] Checkbox Group
   - [ ] Radio / Radio Group
   - [ ] Labels ( To be called within each components )
   - [ ] List
   - [ ] File ( Upload functionality, maybe? )
   - [ ] Buttons
+  - [ ] Error Messages
 
 ( If missing any please let me know )
 
+## Known issues: 
+  - Reset button is doing some weird interaction with the form where it will cache the value and re-apply it on save
+  - Dropdown will not default to first value until after it has been clicked on
 
 # Angular CLI README:
 This project was generated with [angular-cli](https://github.com/angular/angular-cli) version 1.0.0-beta.8.
