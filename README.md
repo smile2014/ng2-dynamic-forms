@@ -13,6 +13,7 @@ Example of how to use the `forms` components can be found in [src/app/tasks](htt
   - [ ] Allow to select type of form from predetermined list `Example: default, submit (login, register, etc..) , collection (multiple entries of the same form)` Each with have specific functionality.
   - [x] Textbox 
   - [x] Dropdown
+    - [ ] Allow for dropdowns to be routes ( maybe? )
   - [x] Textarea
     - [ ] Allow max characters
     - [ ] Allow for not resize
