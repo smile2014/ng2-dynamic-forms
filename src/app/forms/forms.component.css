@@ -6,3 +6,11 @@
     text-transform: uppercase;
     color: cadetblue;
   }
+:host >>> .app-form-control{
+  width:100%;
+  max-width: 600px;
+  padding: 5px;
+}
+:host >>> .app-form-error-message {
+  color: red;
+}

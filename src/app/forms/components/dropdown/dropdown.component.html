@@ -4,12 +4,13 @@
   </label>
  
   <select [id]="question.key" 
+          class="app-form-control"
           [formControlName]="question.key">
     <option *ngFor="let opt of question.options" 
             [value]="opt.key">{{opt.value}}</option>
   </select>
 
-  <div class="errorMessage" *ngIf="!isValid">
+  <div class="app-form-error-message" *ngIf="!isValid">
     {{question.label}} is required
   </div>
 </div>
