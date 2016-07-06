@@ -4,7 +4,8 @@ import {
   FormBase, 
   FormTextbox, 
   FormDropdown,
-  FormTextarea 
+  FormTextarea,
+  FormCheckbox
 } from './../../forms/shared/index';
 
 @Injectable()
@@ -38,6 +39,11 @@ export class TaskFormService {
         required: false,
         order:3,
         type: 'comment'
+      }),
+      new FormCheckbox({
+        key: 'checkbox',
+        label: 'Check Box',
+        order: 4
       })
     ];
 
