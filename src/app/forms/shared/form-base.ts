@@ -47,7 +47,3 @@ export class FormDropdown extends FormBase<string> {
     this.options = options['options'] || [];
   }
 }
-
-export class FormCheckgroup extends FormBase<string> {
-
-}
