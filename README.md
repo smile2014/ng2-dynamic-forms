@@ -25,6 +25,7 @@ Example of how to use the `forms` components can be found in [src/app/tasks](htt
   - [ ] File ( Upload functionality, maybe? )
   - [ ] Buttons
   - [ ] Error Messages
+    - Error messages are only working for textbox component
 
 ( If missing any please let me know )
 
