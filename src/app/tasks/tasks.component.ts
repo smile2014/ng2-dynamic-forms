@@ -26,7 +26,7 @@ export class TasksComponent implements OnInit {
     console.log('Tasks Component Init');
   }
 
-  public formButtonEvent(data: string) {
+  public formAction(data: string) {
     if(data === '') return this.resetData();
     this.updateData(data);
   }

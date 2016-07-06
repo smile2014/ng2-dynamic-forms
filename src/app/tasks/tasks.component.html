@@ -3,8 +3,12 @@
 </h4>
 <hr/>
 <br/>
-<app-forms id="taskForm" [questions]="questions" 
-  (formButtonEvent)="formButtonEvent($event)">
+<app-forms 
+  id="appForm" 
+  [questions]="questions" 
+  (formAction)="formAction($event)"
+>
+  Loading form . . .
 </app-forms>
 
 <!--TODO:

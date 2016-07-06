@@ -11,9 +11,12 @@
   padding-bottom: 10px;
 }
   :host >>> .app-form-group textarea {
-    min-height: 100px;
+    min-height: 150px;
+    max-width: 600px;
+    width:100%;
   }
-  :host >>> .app-form-group input[type="checkbox"] {
+  :host >>> .app-form-group input[type="checkbox"],
+  :host >>> .app-form-group input[type="radio"] {
     width:0;
     margin-right: 5px;
     text-align: left;

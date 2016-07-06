@@ -6,7 +6,8 @@ import {
   TextboxComponent, 
   DropdownComponent,
   TextareaComponent,
-  CheckboxComponent 
+  CheckboxComponent,
+  RadioComponent
 } from './components/index';
 import { FormBase, FormControlService } from './shared/index';
 
@@ -21,6 +22,7 @@ import { FormBase, FormControlService } from './shared/index';
     DropdownComponent,
     TextareaComponent,
     CheckboxComponent,
+    RadioComponent,
     REACTIVE_FORM_DIRECTIVES
   ],
   providers: [
@@ -33,10 +35,9 @@ import { FormBase, FormControlService } from './shared/index';
  */
 export class FormsComponent implements OnInit {
   @Input() questions: FormBase<any>[] = [];
-  @Output() formButtonEvent = new EventEmitter<string>();
+  @Output() formAction = new EventEmitter<string>();
   payLoad: string;
   form: FormGroup;
-  tasks: any[] = [];
 
   constructor(private fcs: FormControlService) {}
 
@@ -59,7 +60,7 @@ export class FormsComponent implements OnInit {
     this.sendPayload(this.payLoad);
   }
 
-  public onSubmit() {
+  public submitPayload() {
     console.log('Form Values (submit) : ', this.form.value);
     // Removes undefined from form values and stringifies the JSON object
     this.payLoad = JSON.stringify(this.removeUndefined(this.form.value));
@@ -73,14 +74,14 @@ export class FormsComponent implements OnInit {
 
   private sendPayload(payload: string){
     // trigger even listener function
-    this.formButtonEvent.emit(payload); 
+    this.formAction.emit(payload); 
   }
 
   private removeUndefined (object: any = {}) {
     let returnObj: any = {};
     // Pft, who needs underscore?
     Object.keys(object).map(key => {
-      if(object[key] !== null && object[key] !== '') returnObj[key] = object[key]
+      if(object[key] !== null && object[key] !== '') returnObj[key] = object[key];
     });
     return returnObj;
   }

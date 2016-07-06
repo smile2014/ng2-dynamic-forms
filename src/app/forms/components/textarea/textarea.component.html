@@ -3,8 +3,10 @@
     {{question.label}}:
   </label>
   <br />
-  <textarea [id]="question.key" class="app-form-control"
-      [formControlName]="question.key">
+  <textarea 
+    [id]="question.key" 
+    class="app-form-control"
+    [formControlName]="question.key">
   </textarea>
   
   <div class="app-form-error-message" *ngIf="!isValid">

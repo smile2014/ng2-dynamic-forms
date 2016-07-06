@@ -46,6 +46,8 @@ const barrels: string[] = [
   'app/forms/components/textarea',
   'app/forms/components/checkbox',
   'app/forms/components/error-message',
+  'app/forms/components/radio',
+  'app/forms/components/radio-group',
   /** @cli-barrel */
 ];
 

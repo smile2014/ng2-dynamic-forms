@@ -1,0 +1,18 @@
+<div 
+  [formGroup]="form"
+  class="app-form-radio app-form-group"
+>
+  <input 
+    class="app-form-control"
+    type="radio"
+    [id]="question.key"
+    [name]="question.key"
+    [formControlName]="question.key"
+    [value]="question.label"
+  />
+  <label
+    [attr.for]="question.key"
+  >
+    {{question.label}}
+  </label>
+</div>

@@ -10,14 +10,17 @@ Example of how to use the `forms` components can be found in [src/app/tasks](htt
 
 ### Todo List:
 - Form Components:
+  - [ ] Allow to select type of form from predetermined list `Example: default, submit (login, register, etc..) , collection (multiple entries of the same form)` Each with have specific functionality.
   - [x] Textbox 
   - [x] Dropdown
   - [x] Textarea
+    - [ ] Allow max characters
+    - [ ] Allow for not resize
   - [x] Checkbox
-  - [ ] Checkbox Group
-  - [ ] Radio / Radio Group
+  - [ ] Checkbox Group ( multiple checkbox components )
+  - [x] Radio
+  - [ ] Radio Group ( multiple radio components )
   - [ ] Labels ( To be called within each components )
-  - [ ] List
   - [ ] File ( Upload functionality, maybe? )
   - [ ] Buttons
   - [ ] Error Messages
