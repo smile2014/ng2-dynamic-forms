@@ -23,6 +23,9 @@ Example of how to use the `forms` components can be found in [src/app/tasks](htt
 
 ( If missing any please let me know )
 
+## Known issues: 
+  - Reset button is doing some weird interaction with the form where it will cache the value and re-apply it on save
+  - Dropdown will not default to first value until after it has been clicked on
 
 # Angular CLI README:
 This project was generated with [angular-cli](https://github.com/angular/angular-cli) version 1.0.0-beta.8.
