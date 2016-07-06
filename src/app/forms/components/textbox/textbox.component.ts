@@ -16,13 +16,22 @@ export class TextboxComponent implements OnInit{
   constructor() {}
   
   ngOnInit(){
-    if(this.question.type === 'checkbox'){
-      throw new Error('Please use FormCheckbox component for checklists');
+    switch(this.question.type){
+      case 'checkbox':
+        this.error('For checkboxes use FormCheckbox component');
+        break;
+      case 'radio':
+        this.error('For radio buttons use FormRadio component')
+        break;
     }
   } 
   
   get isValid() {
     return this.form.controls[this.question.key].valid;
+  }
+
+  private error(message: string){
+    throw new Error(message);
   }
 
 }
