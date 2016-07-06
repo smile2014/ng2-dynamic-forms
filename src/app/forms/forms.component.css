@@ -10,9 +10,9 @@
   margin-bottom: 10px;
   padding-bottom: 10px;
 }
-:host >>> .app-form-group textarea {
-  min-height: 100px;
-}
+  :host >>> .app-form-group textarea {
+    min-height: 100px;
+  }
 :host >>> .app-form-control{
   width:100%;
   max-width: 600px;
@@ -21,3 +21,13 @@
 :host >>> .app-form-error-message {
   color: red;
 }
+
+:host >>> button {
+  padding: 5px;
+  border: 1px #b2b2b2 solid;
+}
+
+  :host >>> button:hover {
+    background: white;
+    cursor: pointer;
+  }
