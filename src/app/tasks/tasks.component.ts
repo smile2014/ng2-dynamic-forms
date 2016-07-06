@@ -27,7 +27,7 @@ export class TasksComponent implements OnInit {
   }
 
   public formButtonEvent(data: string) {
-    if(data === 'reset') return this.resetData();
+    if(data === '') return this.resetData();
     this.updateData(data);
   }
 
@@ -36,6 +36,7 @@ export class TasksComponent implements OnInit {
   }
 
   private resetData() {
+    console.log('reset data');
     return this.tasks = [];
   }
 }

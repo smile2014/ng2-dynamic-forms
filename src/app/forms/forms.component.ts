@@ -9,17 +9,6 @@ import {
 } from './components/index';
 import { FormBase, FormControlService } from './shared/index';
 
-function removeUndefined (object: any = {}){
-  let returnObj: any = {};
-  console.log('Removing Undefined', object);
-  for(let key in object){
-    if(object[key] !== null) {
-      returnObj[key] = object[key];  
-    }
-  }
-  return returnObj;
-}
-
 @Component({
   moduleId: module.id,
   selector: 'app-forms',
@@ -50,28 +39,40 @@ export class FormsComponent implements OnInit {
   constructor(private fcs: FormControlService) {}
 
   public ngOnInit() {
+    // load questions into form
     this.form = this.fcs.toFormGroup(this.questions);
   }
 
   public resetPayload() {
-    console.log('resetting payload');
-    this.payLoad = 'reset'; 
+    // reset payload
+    this.payLoad = '';
+    // reset form values
+    Object.keys(this.form.value).map(value =>  this.form.value[value] = null );
+    // send payload to parent
     this.sendPayload(this.payLoad);
   }
 
   public onSubmit() {
-    let value: any = {};    
-    value = removeUndefined(this.form.value);
-    console.log('Removed undefined?', value);
-    this.payLoad = JSON.stringify(value);
-    this.sendPayload(JSON.stringify(value));
+    // Removes undefined from form values and stringifies the JSON object
+    this.payLoad = JSON.stringify(this.removeUndefined(this.form.value));
+    // send payload to parent
+    this.sendPayload(this.payLoad);
   }
 
 /**
  * Private Functions
  */
-
   private sendPayload(payload: string){
-   this.formButtonEvent.emit(payload); 
+    // trigger even listener function
+    this.formButtonEvent.emit(payload); 
+  }
+
+  private removeUndefined (object: any = {}) {
+    let returnObj: any = {};
+    // Pft, who needs underscore?
+    Object.keys(object).map(key => {
+      if(object[key] !== null && object[key] !== '') returnObj[key] = object[key]
+    });
+    return returnObj;
   }
 }
