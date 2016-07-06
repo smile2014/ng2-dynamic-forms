@@ -7,10 +7,14 @@
  **********************************************************************************************/
 /** Map relative paths to URLs. */
 const map: any = {
+  'underscore' : './node_modules/underscore/underscore.js'
 };
 
 /** User packages configuration. */
 const packages: any = {
+  'underscore': {
+    format: 'cjs'
+  }
 };
 
 ////////////////////////////////////////////////////////////////////////////////////////////////
