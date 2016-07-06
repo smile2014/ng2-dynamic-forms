@@ -47,3 +47,13 @@ export class FormDropdown extends FormBase<string> {
     this.options = options['options'] || [];
   }
 }
+
+export class FormTextarea extends FormBase<string> {
+  controlType = 'textarea';
+  type: string;
+
+  constructor(options: {} = {}) {
+    super(options);
+    this.type = options['type'] || '';
+  }
+}

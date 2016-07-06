@@ -39,6 +39,7 @@ const barrels: string[] = [
   'app/tasks',
   'app/forms',
   'app/list',
+  'app/forms/components/textarea',
   /** @cli-barrel */
 ];
 

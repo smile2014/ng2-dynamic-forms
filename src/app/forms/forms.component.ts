@@ -2,7 +2,11 @@ import { Component, EventEmitter, Input, Output, OnInit } from '@angular/core';
 import { NgSwitch } from '@angular/common';
 import { FormGroup, REACTIVE_FORM_DIRECTIVES } from '@angular/forms';
 
-import { TextboxComponent, DropdownComponent } from './components/index';
+import { 
+  TextboxComponent, 
+  DropdownComponent,
+  TextareaComponent 
+} from './components/index';
 import { FormBase, FormControlService } from './shared/index';
 
 @Component({
@@ -14,6 +18,7 @@ import { FormBase, FormControlService } from './shared/index';
     NgSwitch,
     TextboxComponent,
     DropdownComponent,
+    TextareaComponent,
     REACTIVE_FORM_DIRECTIVES
   ],
   providers: [
@@ -30,7 +35,7 @@ export class FormsComponent implements OnInit {
   payLoad: string;
   form: FormGroup;
   tasks: any[] = [];
-  
+
   constructor(private fcs: FormControlService) {}
 
   public ngOnInit() {
@@ -38,7 +43,8 @@ export class FormsComponent implements OnInit {
   }
 
   public resetPayload() {
-    this.payLoad = '';
+    console.log('resetting payload');
+    this.payLoad = 'reset'; 
     this.sendPayload(this.payLoad);
   }
 

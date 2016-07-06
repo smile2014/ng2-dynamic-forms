@@ -6,6 +6,10 @@
     text-transform: uppercase;
     color: cadetblue;
   }
+:host >>> .app-form-group {
+  margin-bottom: 10px;
+  padding-bottom: 10px;
+}
 :host >>> .app-form-control{
   width:100%;
   max-width: 600px;

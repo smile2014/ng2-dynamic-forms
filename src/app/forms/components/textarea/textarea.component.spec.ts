@@ -10,11 +10,11 @@ import {
   async, inject
 } from '@angular/core/testing';
 
-import { ListComponent } from './list.component';
+import { TextareaComponent } from './textarea.component';
 
-describe('Component: List', () => {
+describe('Component: Textarea', () => {
   it('should create an instance', () => {
-    let component = new ListComponent();
+    let component = new TextareaComponent();
     expect(component).toBeTruthy();
   });
 });

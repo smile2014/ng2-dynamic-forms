@@ -6,11 +6,13 @@
           [form]="form">Loading textbox...</app-form-textbox>
         <app-form-dropdown *ngSwitchCase="'dropdown'" [question]="question"
           [form]="form">Loading dropdown...</app-form-dropdown>
+        <app-form-textarea *ngSwitchCase="'textarea'" [question]="question"
+          [form]="form">Loading textarea...</app-form-textarea>
       </div>
     </div>
 <!--Figure out a way to pass a property that will 
     allow different text inside save button-->
-    <div class="form-row">
+    <div class="form-row app-form-group">
       <button type="reset" (click)="resetPayload()">Reset</button>
       <button type="submit" (click)="onSubmit()">Save</button>
     </div>

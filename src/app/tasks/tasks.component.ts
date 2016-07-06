@@ -27,14 +27,15 @@ export class TasksComponent implements OnInit {
   }
 
   public formButtonEvent(data: string) {
-    let dataJSON = JSON.parse(data);
-    this.addData(dataJSON);
+    if(data === 'reset') return this.resetData();
+    this.updateData(data);
   }
 
-  private addData(data: any = {}){
-    console.log('Data: ', data);
-    console.log('Current Tasks: ', this.tasks);
+  private updateData(data: any = {}){
     this.tasks.push(data);
-    console.log('Updated Tasks: ', this.tasks);
+  }
+
+  private resetData() {
+    return this.tasks = [];
   }
 }

@@ -1,6 +1,11 @@
 import { Injectable } from '@angular/core';
 
-import { FormBase, FormTextbox, FormDropdown } from './../../forms/shared/index';
+import { 
+  FormBase, 
+  FormTextbox, 
+  FormDropdown,
+  FormTextarea 
+} from './../../forms/shared/index';
 
 @Injectable()
 export class TaskFormService {
@@ -8,8 +13,8 @@ export class TaskFormService {
     let questions: FormBase<any>[] = [
 
       new FormTextbox({
-        key: 'bug-number',
-        label: 'Bug Number',
+        key: 'textbox',
+        label: 'Text Box',
         required: false,
         type: 'text',
         order: 1
@@ -26,7 +31,14 @@ export class TaskFormService {
           key: 'bar',
           value: 'Bar'
         }]
-,      })
+      }),
+      new FormTextarea({
+        key: 'textarea',
+        label: 'Text Area',
+        required: false,
+        order:3,
+        type: 'comment'
+      })
     ];
 
     return questions.sort((a, b) => a.order - b.order);

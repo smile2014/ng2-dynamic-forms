@@ -1,8 +1,8 @@
-<div [formGroup]="form">
+<div [formGroup]="form" class="app-form-dropdown app-form-group">
   <label [attr.for]="question.key">
-    {{question.label}}
+    {{question.label}} :
   </label>
- 
+  <br />
   <select [id]="question.key" 
           class="app-form-control"
           [formControlName]="question.key">
