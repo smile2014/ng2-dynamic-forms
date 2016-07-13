@@ -21,7 +21,7 @@ export class LoginComponent implements OnInit {
   error: string;
   
   constructor(private loginSvc: LoginFormService) {
-    this.questions = this.loginSvc.formInit();
+    this.questions = loginSvc.formInit();
   }
 
   public ngOnInit() {
@@ -29,7 +29,6 @@ export class LoginComponent implements OnInit {
   }
 
   public formAction (payLoad: string) {
-    if(payLoad === '') return this.validatePayload(payLoad);
     this.credentials = JSON.parse(payLoad);
     this.validatePayload(this.credentials);
   }
@@ -40,5 +39,6 @@ export class LoginComponent implements OnInit {
 
   private validatePayload (payLoad: string | any) {
     if(payLoad === '') return this.error = 'Something went wrong';
+    // this.runAuth('email', 'password');
   }
 }
