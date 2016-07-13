@@ -1,6 +1,0 @@
-.tasklist div{
-  display: inline;
-}
-  .tasklist + div{
-    padding: 10px;
-  }
