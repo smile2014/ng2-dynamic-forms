@@ -49,6 +49,9 @@ const barrels: string[] = [
   'app/forms/components/radio',
   'app/forms/components/radio-group',
   'app/login',
+  'app/error-404',
+  'app/register',
+  'app/nav',
   /** @cli-barrel */
 ];
 

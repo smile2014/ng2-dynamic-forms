@@ -1,6 +1,6 @@
 import { bootstrap } from '@angular/platform-browser-dynamic';
 import { enableProdMode } from '@angular/core';
-import { AppComponent, environment } from './app/';
+import { AppComponent, environment, APP_ROUTER_PROVIDERS } from './app/';
 import { disableDeprecatedForms, provideForms } from '@angular/forms';
 
 if (environment.production) {
@@ -10,7 +10,8 @@ if (environment.production) {
 try{
   bootstrap(AppComponent, [
     disableDeprecatedForms(),
-    provideForms()
+    provideForms(),
+    APP_ROUTER_PROVIDERS
   ]);
 } catch (error) {
   console.error(`Error bootsrapping applications`, error);

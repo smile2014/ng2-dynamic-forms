@@ -1,15 +1,16 @@
 import { Component } from '@angular/core';
-import { TasksComponent } from './tasks';
 import { LoginComponent } from './login';
+import { ROUTER_DIRECTIVES } from '@angular/router';
 
 @Component({
   moduleId: module.id,
   selector: 'app-root',
   templateUrl: 'app.component.html',
-  styleUrls: ['app.component.css'],
+  styleUrls: [
+    'app.component.css'
+  ],
   directives: [
-    TasksComponent,
-    LoginComponent
+    ROUTER_DIRECTIVES
   ]
 })
 export class AppComponent {
