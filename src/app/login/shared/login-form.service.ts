@@ -15,7 +15,7 @@ export class LoginFormService {
         key: 'email',
         label: 'Email',
         required: true,
-        type: 'text',
+        type: 'email',
         order: 1
       }),
       new FormTextbox({
@@ -23,7 +23,7 @@ export class LoginFormService {
         label: 'Password',
         required: true,
         type: 'password',
-        order: 2
+  	    order: 2
       }),
       new FormCheckbox({
         key: 'remember_me',
