@@ -23,14 +23,10 @@ export class TextboxComponent implements OnInit{
   
   ngOnInit(){
     switch(this.question.type){
-      case 'checkbox':
-        this.error('For checkboxes use FormCheckbox component');
-        break;
-      case 'radio':
-        this.error('For radio buttons use FormRadio component');
-        break;
+      case 'checkbox': this.error('For checkboxes use FormCheckbox component'); break;
+      case 'radio': this.error('For radio buttons use FormRadio component'); break;
+      default: this.validateInputs(); break;
     }
-    this.validateInputs();
   } 
 
   validateInputs() {
