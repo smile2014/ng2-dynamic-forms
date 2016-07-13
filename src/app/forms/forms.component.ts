@@ -9,7 +9,11 @@ import {
   CheckboxComponent,
   RadioComponent
 } from './components/index';
-import { FormBase, FormControlService } from './shared/index';
+
+import { 
+  FormBase, 
+  FormControlService 
+} from './shared/index';
 
 @Component({
   moduleId: module.id,
@@ -65,12 +69,17 @@ export class FormsComponent implements OnInit {
     this.payLoad = '';
     // reset form values
     console.log('Form Values (reset) : ', this.form.value);
-    Object.keys(this.form.value).map(value =>  delete this.form.value[value] );
+    Object.keys(this.form.value).map( value =>  delete this.form.value[value] );
     // send payload to parent
-    this.sendPayload(this.payLoad);
+    this.sendPayload();
   }
 
   public validateForm(controls: any = {}) {
+    /**
+     * Could there be a way for this to listen to changes in all 
+     * child components and validate accordingly? that way there is no need
+     * to manually add teh event emitter in every component
+     */
     let requisites: any[] = [];
     Object.keys(controls).forEach((value, index, array) => {
       requisites.push(controls[value].valid);
@@ -84,16 +93,16 @@ export class FormsComponent implements OnInit {
     // Removes undefined from form values and stringifies the JSON object
     this.payLoad = JSON.stringify(this.removeUndefined(this.form.value));
     // send payload to parent
-    this.sendPayload(this.payLoad);
+    this.sendPayload();
   }
 
 /**
  * Private Functions
  */
 
-  private sendPayload(payLoad: string){
+  private sendPayload(){
     // trigger even listener function
-    this.formAction.emit(payLoad); 
+    this.formAction.emit(this.payLoad); 
   }
 
   private removeUndefined (object: any = {}) {
