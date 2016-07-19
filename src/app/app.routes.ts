@@ -1,7 +1,8 @@
-import { provideRouter, RouterConfig } from '@angular/router';
+import { provideRouter, RouterConfig } from '@angular/router'
 
-import { LoginComponent } from './login';
-import { RegisterComponent } from './register';
+import { LoginComponent } from './login'
+import { RegisterComponent } from './register'
+import { CharacterLookupComponent } from './character-lookup'
 
 export const routes: RouterConfig = [
   { 
@@ -11,6 +12,10 @@ export const routes: RouterConfig = [
   { 
     path:'register', 
     component: RegisterComponent
+  },
+  {
+    path: 'look-up',
+    component: CharacterLookupComponent
   },
   { 
     path:'**', 

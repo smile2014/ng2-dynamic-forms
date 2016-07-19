@@ -1,0 +1,11 @@
+<h4 *ngIf="title">
+  {{title}}
+</h4>
+<hr />
+<br />
+<app-forms
+  id="characterLookUpForm"
+  [questions]="questions"
+  (formAction)="lookUpCharacter($event)"
+>
+</app-forms>

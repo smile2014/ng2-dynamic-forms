@@ -50,6 +50,7 @@ const barrels: string[] = [
   'app/forms/components/radio-group',
   'app/login',
   'app/register',
+  'app/character-lookup',
   /** @cli-barrel */
 ];
 

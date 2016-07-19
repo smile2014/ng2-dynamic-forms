@@ -69,7 +69,7 @@ export class FormsComponent implements OnInit {
     this.payLoad = '';
     // reset form values
     console.log('Form Values (reset) : ', this.form.value);
-    Object.keys(this.form.value).map( value =>  delete this.form.value[value] );
+      Object.keys(this.form.value).map( value =>  delete this.form.value[value] );
     // send payload to parent
     this.sendPayload();
   }

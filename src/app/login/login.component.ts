@@ -25,7 +25,7 @@ export class LoginComponent implements OnInit {
   }
 
   public ngOnInit() {
-    console.log('Login Component Init');
+    
   }
 
   public formAction (payLoad: string) {
